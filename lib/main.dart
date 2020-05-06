@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
+        appBarTheme: AppBarTheme(
+          textTheme: TextTheme()
+        ),
         primarySwatch: Colors.red,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
