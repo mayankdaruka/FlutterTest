@@ -4,6 +4,7 @@ const LargeTextSize = 26.0;
 const MediumTextSize = 20.0;
 const BodyTextSize = 16.0;
 const String FontNameDefault = "Righteous";
+const String SecondFont = "AnticDidone";
 
 const AppBarTextStyle = TextStyle(
   fontFamily: FontNameDefault,
