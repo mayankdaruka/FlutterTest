@@ -63,6 +63,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Righteous-Regular.ttf
           weight: 300
+    - family: AnticDidone
+      fonts:
+        - asset: assets/fonts/AnticDidone-Regular.ttf
+          weight: 300
   # fonts:
   #   - family: Schyler
   #     fonts:
