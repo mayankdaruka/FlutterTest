@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 const LargeTextSize = 26.0;
 const MediumTextSize = 20.0;
 const BodyTextSize = 16.0;
-const String FontNameDefault = "Righteous";
+const String FontNameDefault = "Anaheim";
 const String SecondFont = "AnticDidone";
+const String ThirdFont = "Righteous";
 
 const AppBarTextStyle = TextStyle(
   fontFamily: FontNameDefault,

@@ -67,6 +67,10 @@ flutter:
       fonts:
         - asset: assets/fonts/AnticDidone-Regular.ttf
           weight: 300
+    - family: Anaheim
+      fonts:
+        - asset: assets/fonts/Anaheim-Regular.ttf
+          weight: 300
   # fonts:
   #   - family: Schyler
   #     fonts:
