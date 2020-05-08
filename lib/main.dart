@@ -4,6 +4,10 @@ import 'items.dart';
 import 'navigation.dart';
 import 'style.dart';
 import 'locationlisting.dart';
+import 'locationdetail.dart';
+
+const LocationsRoute = '/';
+const LocationDetailRoute = '/locationdetail';
 
 void main() => runApp(MyApp());
 
@@ -13,34 +17,46 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      // home: LocationList(),
+      // initialRoute: '/',
       // Good for simple applications, but a lot of shortcomings
-      routes: {
-        // '/': (context) => firstScreen(),
-        // '/second': (context) => secondScreen()
-      },
+      // PROBLEM: CANNOT PASS DYNAMIC PARAMETERS
+      // routes: {
+      //   '/': (context) => LocationList(),
+      //   '/second': (context) => secondScreen()
+      // },
+      onGenerateRoute: _routes(),
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         appBarTheme: AppBarTheme(
-          textTheme: TextTheme(title: AppBarTextStyle)
+          textTheme: TextTheme(headline6: AppBarTextStyle)
         ),
         textTheme: TextTheme(
-          title: TitleTextStyle,
-          subtitle: Body1TextStyle,
+          headline1: TitleTextStyle,
+          headline2: Body1TextStyle,
         ),
         primarySwatch: Colors.red,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       // home: Navigation(),
-      home: LocationList(),
     );
+  }
+
+  RouteFactory _routes() {
+    return (settings) {
+      final Map<String, dynamic> arguments = settings.arguments;
+      Widget screen;
+      switch (settings.name) {
+        case LocationsRoute:
+          screen = LocationList();
+          break;
+        case LocationDetailRoute:
+          screen = LocationDetail(arguments['id']);
+          break;
+        default:
+          return null;
+      }
+      return MaterialPageRoute(builder: (BuildContext context) => screen);
+    };
   }
 }
 
@@ -94,20 +110,6 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(

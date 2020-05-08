@@ -27,7 +27,7 @@ class Navigation extends StatelessWidget {
           children: <Widget>[
             Column(
               // Cascade notation, takes given item and lets you run a function against it/make an assignment
-              children: <Widget>[Text(location.name, style: Theme.of(context).textTheme.title), ImageBanner(location.imagePath)]..addAll(textSections(location)),
+              children: <Widget>[Text(location.name, style: Theme.of(context).textTheme.headline1), ImageBanner(location.imagePath)]..addAll(textSections(location)),
             ),
             TextSection("Camera Icon", "Just a small paragraph to test this out and see if it's right part 2."),
             TextSection("Comment Icon", "Just a small paragraph to test this out and see if it's right part 3.")

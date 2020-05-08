@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sampleproject/main.dart';
 import 'models/location.dart';
 
 class LocationList extends StatelessWidget {
@@ -11,7 +12,7 @@ class LocationList extends StatelessWidget {
       ),
       body: ListView(
         children: locations.map((location) => GestureDetector(
-          child: Text(location.name, style: Theme.of(context).textTheme.subtitle),
+          child: Text(location.name, style: Theme.of(context).textTheme.headline1),
           onTap: () => _onLocationTap(context, location.id),
         )).toList(),
       ),
@@ -21,7 +22,7 @@ class LocationList extends StatelessWidget {
   // If it is void you can just remove the void keyword
   void _onLocationTap(BuildContext context, int locationID) {
     // Navigate to a new screen
-    
+    Navigator.pushNamed(context, LocationDetailRoute, arguments: {"id": locationID});
   }
 
 }

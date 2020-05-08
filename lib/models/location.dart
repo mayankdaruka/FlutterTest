@@ -7,7 +7,20 @@ class Location {
   final List<LocationFact> facts;
   Location(this.id, this.name, this.imagePath, this.facts);
 
-    static List<Location> fetchAll() {
+  static Location fetchByID(int locationID) {
+    // Fetch all locations, iterate through them, and when
+    // we find location with correct ID we return them
+    List<Location> locations = Location.fetchAll();
+    for (var i = 0; i < locations.length; i++) {
+      if (locations[i].id == locationID) {
+        return locations[i];
+        // Use map for better efficiency
+      }
+    }
+    return null;
+  }
+
+  static List<Location> fetchAll() {
     return [
       Location(1, "Austin High School", "assets/images/ahs.jpg", [LocationFact("Summary", "I went to this school from 2015-2019."),
       LocationFact("How to Get There", "Take FM 1464 from Chelsea Harbor.")]),
