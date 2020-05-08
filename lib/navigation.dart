@@ -15,6 +15,7 @@ class Navigation extends StatelessWidget {
         appBar: AppBar(
           title: Text("Example Tabs"),
           bottom: TabBar(
+            indicatorColor: Colors.black,
             tabs: <Widget>[
               Tab(icon: Icon(Icons.arrow_back)),
               Tab(icon: Icon(Icons.camera)),
