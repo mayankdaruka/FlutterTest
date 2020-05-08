@@ -3,6 +3,7 @@ import 'package:sampleproject/style.dart';
 import 'items.dart';
 import 'navigation.dart';
 import 'style.dart';
+import 'locationlisting.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      // Good for simple applications, but a lot of shortcomings
+      routes: {
+        // '/': (context) => firstScreen(),
+        // '/second': (context) => secondScreen()
+      },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +38,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Navigation(),
+      // home: Navigation(),
+      home: LocationList(),
     );
   }
 }
